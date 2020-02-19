@@ -6,7 +6,14 @@
 
     <groupId>com.shijf</groupId>
     <artifactId>flink-self-study</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>flink-connectors</module>
+        <module>flink-connectors/flink-connector-kafka</module>
+        <module>flink-connectors/flink-connector-hdfs</module>
+        <module>flink-connectors/flink-connector-hbase</module>
+    </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -18,6 +25,8 @@
         <scala.binary.version>2.12</scala.binary.version>
         <maven.compiler.source>${java.version}</maven.compiler.source>
         <maven.compiler.target>${java.version}</maven.compiler.target>
+        <!-- hadoop 版本 -->
+        <hadoop.version>3.2.1</hadoop.version>
     </properties>
 
     <dependencies>
@@ -27,11 +36,11 @@
         -->
 
         <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-java</artifactId>
-            <version>${flink.version}</version>
-            <scope>provided</scope>
-        </dependency>
+        <groupId>org.apache.flink</groupId>
+        <artifactId>flink-java</artifactId>
+        <version>${flink.version}</version>
+        <scope>provided</scope>
+    </dependency>
         <dependency>
             <groupId>org.apache.flink</groupId>
             <artifactId>flink-streaming-java_${scala.binary.version}</artifactId>
@@ -39,56 +48,36 @@
             <scope>provided</scope>
         </dependency>
 
-        <!--kafka连接器-->
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-kafka_2.12</artifactId>
-            <version>1.9.0</version>
-        </dependency>
+
 
         <!-- flink-redis -->
-        <dependency>
-            <groupId>org.apache.bahir</groupId>
-            <artifactId>flink-connector-redis_2.11</artifactId>
-            <version>1.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.bahir</groupId>-->
+<!--            <artifactId>flink-connector-redis_2.11</artifactId>-->
+<!--            <version>1.0</version>-->
+<!--        </dependency>-->
 
         <!-- flink-redis -->
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-connector-elasticsearch6_2.12</artifactId>
-            <version>1.9.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.flink</groupId>-->
+<!--            <artifactId>flink-connector-elasticsearch6_2.12</artifactId>-->
+<!--            <version>1.9.0</version>-->
+<!--        </dependency>-->
 
         <!-- mysql-connect-->
-        <dependency>
-            <groupId>mysql</groupId>
-            <artifactId>mysql-connector-java</artifactId>
-            <version>5.1.34</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>mysql</groupId>-->
+<!--            <artifactId>mysql-connector-java</artifactId>-->
+<!--            <version>5.1.34</version>-->
+<!--        </dependency>-->
 
         <!-- hbase -->
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-hbase_${scala.binary.version}</artifactId>
-            <version>1.9.0</version>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.apache.flink</groupId>-->
+<!--            <artifactId>flink-hbase_${scala.binary.version}</artifactId>-->
+<!--            <version>1.9.0</version>-->
+<!--        </dependency>-->
         <!--hadoop -->
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-common</artifactId>
-            <version>3.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.hadoop</groupId>
-            <artifactId>hadoop-mapreduce-client-core</artifactId>
-            <version>3.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>org.apache.flink</groupId>
-            <artifactId>flink-hadoop-compatibility_${scala.binary.version}</artifactId>
-            <version>${flink.version}</version>
-        </dependency>
 
 
         <!-- Add logging framework, to produce console output when running in the IDE. -->
@@ -97,13 +86,11 @@
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-log4j12</artifactId>
             <version>1.7.7</version>
-            <scope>runtime</scope>
         </dependency>
         <dependency>
             <groupId>log4j</groupId>
             <artifactId>log4j</artifactId>
             <version>1.2.17</version>
-            <scope>runtime</scope>
         </dependency>
     </dependencies>
 
