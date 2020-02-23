@@ -1,11 +1,8 @@
-package com.online;
+package com.shijf;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.streaming.api.environment.StreamExecutionEnvironment;
-import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
 import org.apache.flink.streaming.api.functions.source.RichSourceFunction;
-
-import java.util.Properties;
 
 /**
  * @description:

@@ -1,4 +1,4 @@
-package com.online;
+package com.shijf;
 
 import org.apache.flink.configuration.Configuration;
 import org.apache.flink.streaming.api.functions.sink.RichSinkFunction;
@@ -14,7 +14,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 
-import static com.online.HBaseConstant.*;
+import static com.shijf.HBaseConstant.*;
 
 /**
  * @description:

@@ -1,4 +1,4 @@
-package com.online;
+package com.shijf;
 
 
 public class HBaseConstant {

@@ -1,4 +1,4 @@
-package com.online;
+package com.shijf;
 
 import org.apache.flink.api.common.functions.MapFunction;
 import org.apache.flink.api.java.tuple.Tuple2;
